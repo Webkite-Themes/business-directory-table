@@ -121,7 +121,8 @@ $mainGutter: 1.25em;
     height: 2.813em;
     }
     
-  } 
+  }
+
 /************************************************* SORTS */
 #webkite-results{
 
@@ -154,6 +155,7 @@ $mainGutter: 1.25em;
     }
   
   }
+
 /********************************************* SORT MENU */
 #webkite-results{
 
@@ -203,7 +205,6 @@ $mainGutter: 1.25em;
     }
   
   }
-
 
 /************************************************ FILTERS */
 #webkite-results{
@@ -382,6 +383,7 @@ $mainGutter: 1.25em;
     }
   
   }
+
 /********************************************* PAGINATION */
 #webkite-results{
 
@@ -453,7 +455,8 @@ $mainGutter: 1.25em;
     }
   td a{
     font-size: .875em;
-    &.webkite-address span, &.webkite-email{@include ellipsisThis;}
+    &.webkite-address span, &.webkite-email, &.webkite-website{@include ellipsisThis;}
+    &.webkite-website{max-width: 10em;}
     &.webkite-email{display: block;}
     }
     a.more-button, a.less-button{
@@ -474,6 +477,7 @@ $mainGutter: 1.25em;
       }
  
  } 
+
 /************************************ TABLE RESULTS */
 #webkite-results{
   
@@ -513,13 +517,14 @@ $mainGutter: 1.25em;
     &.desc:before{background-position: 0 -5px;}
     }
   td ul{
+    li{width: 100%; margin-bottom: $mainGutter/2;}
     b{font-weight: 700;}
     b, .facet-values{
       display: inline-block;
       width: 100%;
       }
-    span.address a > span{display: inline-block;}
-    .city, .state{display: inline;}
+    span.address a > span{display: inline-block; width: 100%;}
+    .webkite-address .city, .webkite-address  .state{display: inline;}
     .city + .state:before{content: ", ";}
     }
       
@@ -554,20 +559,13 @@ $mainGutter: 1.25em;
       b, span.facet-values{display: inline-block; width: 49%; vertical-align: top;}
       b{font-weight: 700;}
     }
-  tr + tr > td{
-    column-span: 5;
-    -webkit-column-span: 5; /* Safari & Chrome */
-    -moz-column-span: 5; /* Firefox */
-    -ms-column-span: 5; /* Internet Explorer */
-    -o-column-span: 5; /* Opera */
-    }
   
   }
 
 /************************************** INLINE FILTERS */
 #webkite-results{
 
-  .sixty li b{
+  .sixty li b, td li b{
     position: relative;
     &.inline-filter-button + .facet-values{padding-top: $mainGutter/4;}
     > .webkite-toggle{
@@ -596,7 +594,7 @@ $mainGutter: 1.25em;
         }
       }
     }
-  .sixty .inline-filter-menu{
+  .sixty .inline-filter-menu, td .inline-filter-menu{
     @include roundedUp(.375em);
     @include shadowHere;
     -webkit-padding-start: 0;
@@ -661,8 +659,9 @@ $mainGutter: 1.25em;
     margin-left: 0;
     padding-left: 0;
     }
-  .webkite-item-details{ul.forty, ul.sixty{max-width:100%;width: 100%;}}
+  .webkite-item-details{ul.forty, ul.sixty{max-width:100%;width: 100%; padding-left: 0;}}
   .forty li, .sixty li{
+    width: 100%;
     b, .facet-values{width: 100%;}
     .webkite-toggle{width: auto;}
     }
@@ -680,7 +679,7 @@ $mainGutter: 1.25em;
     height: 2.813em*2+$mainGutter;
     }
   .webkite-address, .webkite-name{border: none;}
-  .webkite-name{li{margin-bottom: $mainGutter/2;}}
+  .webkite-name{li{margin-bottom: $mainGutter/2;width: 100%;}}
    td{vertical-align: top; &.open-toggle{vertical-align: middle;}}
     
   }//end xs
@@ -698,6 +697,7 @@ $mainGutter: 1.25em;
     padding-left: 0;
     }
   .forty li, .sixty li{
+    width: 100%;
     b, .facet-values{width: 100%;}
     .webkite-toggle{width: auto;}
     }
@@ -717,7 +717,7 @@ $mainGutter: 1.25em;
 /***************************************  DISPLAY RULES */
 #webkite-results.xs{
   .until-xs, .until-sm, .sm-only, .md-only, .lg-only{display: none;}
-  .xs-only{display: inline-block;}
+  .xs-only, .webkite-results-header .xs-only{display: inline-block; width: 100%;}
   td.xs-only, th.xs-only{display: table-cell;}
   }
 #webkite-results.sm{
