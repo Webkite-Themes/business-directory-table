@@ -1,2 +1,2 @@
-business-directory-table
+Business Directory Table
 ========================
