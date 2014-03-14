@@ -422,7 +422,8 @@ $mainGutter: 1.25em;
 #webkite-results{
 
   table{
-    border: none;
+    border: 0 none;
+    border-collapse: separate;
     width: 100%;
     margin-bottom: $mainGutter;
     max-width: 100%;
@@ -435,7 +436,7 @@ $mainGutter: 1.25em;
     }
   th, td{
     @include boxedUp;
-    border: none;
+    border: 0 none;
     line-height: 1em;
     padding: $mainGutter/2;
     vertical-align: middle;
@@ -704,8 +705,8 @@ $mainGutter: 1.25em;
     margin-left: 0;
     padding-left: 0;
     }
-  .forty{max-width: 43%; width: 43%;}
-  .sixty{max-width: 55%; width: 55%;}
+   .webkite-item-details ul.forty{max-width: 43%; width: 43%;}
+   .webkite-item-details ul.sixty{max-width: 55%; width: 55%;}
   .forty li, .sixty li{
     width: 100%;
     b, .facet-values{width: 100%;}
