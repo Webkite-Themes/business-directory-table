@@ -370,6 +370,49 @@
 #webkite-results .filter-menu li:hover .filter-menu-child {
   display: block; }
 
+/******************************* FILTER OVERVIEW AND SHADE */
+#webkite-results .webkite-truncated:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0);
+  /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(left, white, rgba(255, 255, 255, 0));
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(left, white, rgba(255, 255, 255, 0));
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(left, white, rgba(255, 255, 255, 0));
+  /* IE10 */
+  background-image: -o-linear-gradient(left, white, rgba(255, 255, 255, 0));
+  /* Opera 11.10+ */
+  background-image: linear-gradient(left, white, rgba(255, 255, 255, 0));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='white', EndColorStr='rgba(255, 255, 255, 0)');
+  height: 1.6em;
+  width: 2em;
+  position: absolute;
+  left: 4.563em;
+  top: 1px; }
+#webkite-results .all-current-filters {
+  -webkit-border-radius: 0.188em;
+  -moz-border-radius: 0.188em;
+  -ms-border-radius: 0.188em;
+  -o-border-radius: 0.188em;
+  border-radius: 0.188em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 1.2em;
+  padding: 0.41667em 0.41667em 0.25em 0.41667em;
+  position: absolute;
+  top: 0;
+  z-index: 3; }
+  #webkite-results .all-current-filters .all-filters-wrapper {
+    white-space: normal; }
+    #webkite-results .all-current-filters .all-filters-wrapper [class^="filter-group"] {
+      display: inline; }
+
 /********************************************* PAGINATION */
 #webkite-results {
   /* page input */

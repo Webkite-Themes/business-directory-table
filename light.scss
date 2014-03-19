@@ -56,6 +56,16 @@ $mainGutter: 1.25em;
     height: 0;margin: 0;padding: 0; white-space: pre-line;
     }
   }
+@mixin gradiateHorizontal($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, right top, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(left, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(left, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(left, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(left, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(left, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
   
 @include web-font(("Open+Sans") ("300,400,400i,700,700i"));
 
@@ -380,6 +390,35 @@ $mainGutter: 1.25em;
     }
   .filter-menu li:hover .filter-menu-child{
     display: block;
+    }
+  
+  }
+
+/******************************* FILTER OVERVIEW AND SHADE */
+#webkite-results{
+  
+  .webkite-truncated:before{
+    content: "";
+    @include gradiateHorizontal(rgba(255,255,255,1), rgba(255,255,255,0));
+    height: 1.6em; width: 2em;
+    position: absolute;
+    left: 4.563em;
+    top:1px;
+    }
+  .all-current-filters{
+    @include roundedUp(.188em);
+    @include boxedUp;
+    background: white;
+    border: 1px solid $lighterOpacity;
+    line-height: 1.2em;
+    padding:$mainGutter/3 $mainGutter/3 $mainGutter/5 $mainGutter/3;
+    position: absolute;
+    top:0;
+    z-index: 3;
+    .all-filters-wrapper{
+      white-space: normal;
+      [class^="filter-group"]{display: inline;}
+      }
     }
   
   }
