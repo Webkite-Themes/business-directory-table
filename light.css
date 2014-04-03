@@ -74,8 +74,7 @@
   display: inline-block;
   font: 700 1.125em/1 "Open Sans";
   margin: 0;
-  word-break: break-all;
-  word-break: break-word; }
+  word-break: normal; }
 #webkite-results p, #webkite-results li {
   color: rgba(0, 0, 0, 0.6); }
 
