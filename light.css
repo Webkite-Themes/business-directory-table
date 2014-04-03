@@ -70,15 +70,12 @@
 
 /* TYPOGRAPHY */
 #webkite-results h2 {
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
   color: rgba(0, 0, 0, 0.7);
   display: inline-block;
   font: 700 1.125em/1 "Open Sans";
-  margin: 0; }
+  margin: 0;
+  word-break: break-all;
+  word-break: break-word; }
 #webkite-results p, #webkite-results li {
   color: rgba(0, 0, 0, 0.6); }
 
